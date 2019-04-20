@@ -70,7 +70,7 @@ def get():
 def main():
     print("欢迎来到阴阳师联盟！")
     print("python text.py默认")
-    print("是否开启多人组队?1是,否直接回车.")
+    print("python text.py 1 开启的多人组队.")
     arg = 0
     if sys.argv.__len__() > 1:  #多人组队
         arg = sys.argv[1]
@@ -80,6 +80,9 @@ def main():
     #filename_next = "nextground.jpg"
     i = 0
     k = 0
+    for hd in list:
+        # 将窗口恢复默认位置
+        win32gui.SetWindowPos(hd, win32con.HWND_BOTTOM, 384, 189, 1154, 713, win32con.SWP_NOSIZE)
     while True:
         time.sleep(2)  # 设置隔2秒运行一次
         # 截图
@@ -89,8 +92,7 @@ def main():
             loop(filename, hd, i, k, arg)
 
 def loop(filename, hd, i, k, arg):
-    #将窗口恢复默认位置
-    win32gui.SetWindowPos(hd, win32con.HWND_BOTTOM, 383, 183, 1154, 686, win32con.SWP_NOZORDER)
+
     window_capture(filename, hd)  # 对整个屏幕截图，并保存截图为filename
     # 原图
     srcImg = cv2.imread(filename)  # 读取filename的截图文件，这里应该是可以对截图函数进行修改，不用产生中间的文件，截图直接与ndarray形式存在

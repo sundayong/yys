@@ -44,5 +44,5 @@ print(rect)
 
 rect = (383, 183, 1537, 869);
 
-win32gui.SetWindowPos(hwnd, win32con.HWND_BOTTOM, 383, 183, 1140, 680, win32con.SWP_NOZORDER)
+win32gui.SetWindowPos(591614, win32con.HWND_BOTTOM, 384, 189, 1154, 713,  win32con.SWP_NOSIZE)
 
