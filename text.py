@@ -71,7 +71,7 @@ def main():
     print("欢迎来到阴阳师联盟！")
     print("python text.py默认")
     print("是否开启多人组队?1是,否直接回车.")
-    print(sys.argv.count())
+    arg = 0
     if sys.argv.__len__() > 1:  #多人组队
         arg = sys.argv[1]
     list = get()
@@ -107,7 +107,8 @@ def loop(filename, hd, i, k, arg):
     begin_yue_queding = cv2.imread('begin_yue_queding.png')
     end_yue = cv2.imread('end_yue.png')
     invite = cv2.imread("invite.png")
-    sanhuimu = cv2.imread("sanhuimu.png")
+    invite1 = cv2.imread("invite1.png")
+    #sanhuimu = cv2.imread("sanhuimu.png")
     # 用了一个最简答的图像相见的方式来完成以下动作，具体图示往下翻
     begin_meanValue = np.mean(srcImg[450:494, 799:904, :] - begin)  # 检测截图是否包含开始战斗
     end1_meanValue = np.mean(srcImg[119:184, 380:480, :] - end1)  # 检测战斗是否结束
@@ -122,7 +123,7 @@ def loop(filename, hd, i, k, arg):
     begin_yue_queding_meanValue = np.mean(srcImg[486: 548, 1013:1075, :] - begin_yue_queding)
     end_yue_meanValue = np.mean(srcImg[547: 569, 603:660, :] - end_yue)
     invite_meanValue = np.mean(srcImg[417: 494, 892:990, :] - invite)  #多人组队
-    invite_meanValue1 = np.mean(srcImg[414: 504, 591:689, :] - invite)
+    invite_meanValue1 = np.mean(srcImg[414: 504, 591:689, :] - invite1)
     # dian_value = np.mean(srcImg[241: 426, 450:673, :] - sanhuimu)#三回目是否点大蛇
 
     ##图片截取[y1:y2, x1:x2]
